@@ -14,7 +14,7 @@ int main() {
         printf("Intervalo (50,75]\n");
     } else if (valor > 75 && valor <= 100)
     {
-        printf("Intervalor (75,100]\n");
+        printf("Intervalo (75,100]\n");
     } else {
         printf("Fora de intervalo");
     }
