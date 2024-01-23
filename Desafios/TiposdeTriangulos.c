@@ -1,4 +1,5 @@
-#include<stdio.h>
+#include <stdio.h>
+#include <math.h>
 
 int main() {
 
@@ -6,6 +7,7 @@ int main() {
 
     scanf("%f %f %f", &a, &b, &c);
 
+    //bloco usado para ordenar os valores em ordem decrescente;
     if(b >= a && b >= c) {
         auxiliar = b;
         b = (a >= c) ? a : c;
@@ -13,7 +15,7 @@ int main() {
         a = auxiliar;
     } else if(c >= a) {
         auxiliar = c;
-        c = (c >= b) ? b : c;
+        c = (b >= a) ? a : b;
         b = (b >= a) ? b : a; 
         a = auxiliar;
     } else {
@@ -22,4 +24,52 @@ int main() {
     }
 
     printf("a: %.2f\nb: %.2f\nc: %.2f\n", a, b, c);
+
+    //bloco usado para determinar qual tipo de triangulo os três valores informados formam;
+    if(a >= b + c) {
+
+        printf("NAO FORMA TRIANGULO\n"); 
+
+    } else if(pow(a, 2) == (pow(b, 2) + pow(c, 2))) {
+
+        printf("TRIANGULO RETANGULO\n");
+
+        if(a == b && b == c) {
+
+            printf("TRIANGULO EQUILATERO\n");
+
+        } else if((a == b && b != c) || (b == c && a != c) || (a == c && a != b)) {
+
+            printf("TRIANGULO ISOSCELES\n");
+
+        } 
+    } else if(pow(a, 2) > (pow(b, 2) + pow(c, 2))) {
+
+        printf("TRIANGULO OBTUSANGULO\n");
+
+        if(a == b && b == c) {
+
+            printf("TRIANGULO EQUILATERO\n");
+
+        } else if((a == b && b != c) || (b == c && a != c) || (a == c && a != b)) {
+
+            printf("TRIANGULO ISOSCELES\n");
+
+        }
+    } else if (pow(a, 2) < (pow(b, 2) + pow(c, 2))) {
+
+        printf("TRIANGULO ACUTANGULO\n");
+
+        if(a == b && b == c) {
+
+            printf("TRIANGULO EQUILATERO\n");
+
+        } else if((a == b && b != c) || (b == c && a != c) || (a == c && a != b)) {
+
+            printf("TRIANGULO ISOSCELES\n");
+
+        }
+    }
+
+    return 0;
 }
