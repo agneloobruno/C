@@ -7,5 +7,13 @@ int main() {
     scanf("%d %d", &inicio, &fim);
 
 
-     = inicio + 
+     if (inicio < fim) {
+        duracao = fim - inicio;
+     } else {
+        duracao = 24 - inicio + fim;
+     }
+
+     printf("O JOGO DUROU %d HORA(S)\n", duracao);
+
+     return 0;
 }
