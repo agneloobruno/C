@@ -2,16 +2,25 @@
 
 int main() {
 
-    float salario = 0, parte_tributavel_1 = 0, parte_tributavel_2 = 0;
+    double salario = 0, imposto =0;
 
-    scanf("%f", &salario);
+    scanf("%lf", &salario);
 
-    if (salario > 0 && salario <= 2000) {
-        printf("Isento\n");
-    } else if (salario > 2000.01 && salario <= 3000) {
-        salario += - 2000;
-        parte_tributavel_1 = salario * 0.08;
-        
+    if (salario > 2000.00) {
+        if (salario <= 3000.00) {
+            imposto = (salario - 2000.00) * 0.08;
+        } else if (salario <= 4500.00) {
+            imposto = 1000.00 * 0.08 + (salario - 3000.00) * 0.18;
+        } else {
+            imposto = 1000.00 * 0.08 + 1500 * 0.18 + (salario - 4500) * 0.28; 
+        }
     }
-    printf("%.2f %.2f", parte_tributavel_1, parte_tributavel_2);
+
+    if (imposto > 0.0) {
+        printf("R$ %.2lf\n", imposto);
+    } else {
+        printf("Isento\n");
+    }
+
+    return 0;
 }
