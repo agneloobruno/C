@@ -1,7 +1,7 @@
 #include<stdio.h>
 
-double quadrado(double x) {
-    return x * x;
+double quadrado(double i) {
+    return i * i;
 }
 
 int main() {
