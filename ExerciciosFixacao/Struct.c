@@ -10,21 +10,21 @@ typedef struct {
     char nome[100];
 } Pessoa;
 
-struct Pessoa2 {
-    int idade;
-    char sexo;
-    char nome[100];
-};
 
 int main() {
-    Pessoa pessoa1;
-    struct Pessoa2 pessoa2;
+    Pessoa pessoa;
 
-    pessoa1.idade = 35;
-    pessoa1.sexo = 'F';
-    strcpy(pessoa1.nome,"Maria Madalena");
+    printf("Digite o seu nome: ");
+    fgets(pessoa.nome, 100, stdin);
+    printf("Digite a sua idade: ");
+    scanf("%d", &pessoa.idade);
+    scanf("%c");
+    printf("Digite o seu sexo: [F/M]");
+    scanf("%c", &pessoa.sexo);
 
-    printf("Nome: %s\nIdade: %d\nSexo: %c", pessoa1.nome, pessoa1.idade, pessoa1.sexo);
+    printf("\n\n");
+
+    printf("Nome: %s\nIdade: %d\nSexo: %c", pessoa.nome, pessoa.idade, pessoa.sexo);
 
     return 0;
 }
